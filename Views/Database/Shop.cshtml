@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Shop";
+}
+@model IEnumerable<Lab20CoffeeShopDatabase.Models.Item>
+<h1>Shop</h1>
+
+<table class="table">
+    <tr>
+        <td> Name</td>
+        <td> Description</td>
+        <td> Quantity</td>
+        <td> Price</td>
+
+
+    </tr>
+    @*@--7--*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.Quantity
+            </td>
+            <td>
+                @item.Price
+            </td>
+
+            @if (Context.Session.GetString("LoggedIn") != null)
+            {
+                <td>
+                    <a href="/Database/BuyItem?Id=@item.Id">
+                        <input type="submit" value="Buy" class="btn-block-danger" /> @*--15--*@
+                    </a>
+                </td>
+            }
+            <td>
+                <a href="/Database/RemoveItem?Id=@item.Id">
+                    <input type="submit" value="Remove Item" class="btn-block-danger" /> @*--15--*@
+                </a>
+            </td>
+
+
+        </tr>
+    }
+
+
+</table>
+
+@Html.ActionLink("Add Item", "AddNewItem")

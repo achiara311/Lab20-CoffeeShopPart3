@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Summary";
+}
+
+@model Lab20CoffeeShopDatabase.Models.User
+
+<h1>Welcome, @Model.UserName!</h1>
+<p>
+    <h2> You are now up to date with our latest deals and offers!</h2>
+</p>
+<div class="one">
+    <p> @Model.UserName</p>
+    <p> @Model.Email</p>
+    <p> @Model.Password</p>
+    <p> @Model.PhoneNumber</p>
+    <p> @Model.NickName</p>
+    <p> @Model.ZipCode</p>
+    <p> @Model.Funds</p>
+</div>
+
+<a href="/Database/Shop">Shop</a>
+<style>
+    body {
+        background-image: url(https://www.sciencenews.org/sites/default/files/main/articles/100315_coffee_opener_NEW_0.jpg);
+        background-size: cover;
+    }
+
+
+    .one {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 16px;
+    }
+</style>
+
+
+

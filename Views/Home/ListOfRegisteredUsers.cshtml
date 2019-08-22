@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "ListOfRegisteredUsers";
+}
+
+<h1>ListOfUsers</h1>
+
+@model IEnumerable<Lab20CoffeeShopDatabase.Models.User>
+
+
+@foreach (var item in Model)
+{
+    <p>
+        @item.UserName
+        @item.Password
+    </p>
+    <br />
+}
